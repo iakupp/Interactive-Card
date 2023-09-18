@@ -1,0 +1,298 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+:root {
+  --font-family:"Space Grotesk", sans-serif;
+  --font-size: 18px;
+  --font-weight: 500;
+  --active-input-border: hsl(249, 99%, 64%);
+  --input-wrong: hsl(0, 100%, 66%);
+  --white: hsl(0, 0%, 100%);
+  --white-second: hsl(270, 3%, 87%);
+  --silver-stone: hsl(279, 6%, 55%);
+  --dark-violet: hsl(278, 68%, 11%);
+  --mobile-width: 375px;
+  --desktop-width: 1440px;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+*:focus {
+  outline: none;
+}
+
+.wrapper {
+  margin-inline: auto;
+  padding: 1.25em;
+}
+
+header {
+  background-image: url(../images/bg-main-mobile.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  width: 100%;
+  height: 15rem;
+}
+header .wrapper .first-card img {
+  position: absolute;
+  top: 2rem;
+  right: 1rem;
+  width: 76%;
+  height: 65%;
+}
+header .wrapper .first-card .back-side {
+  position: absolute;
+  color: var(--white);
+  top: 6.3rem;
+  right: 3rem;
+}
+header .wrapper .first-card .back-side .card-cvc-display {
+  font-size: 0.6em;
+  letter-spacing: 0.2em;
+}
+header .wrapper .second-card {
+  width: 76.2%;
+  height: 65.7%;
+}
+header .wrapper .second-card img {
+  position: absolute;
+  bottom: -2.7rem;
+  left: 1rem;
+  width: 76.2%;
+  height: 65.7%;
+}
+header .wrapper .second-card .card-info {
+  position: absolute;
+  bottom: -0.7rem;
+  left: 9%;
+  width: 65.34%;
+  height: 17.7%;
+  color: var(--white);
+}
+header .wrapper .second-card .card-info .card-number-display {
+  letter-spacing: 0.13em;
+}
+header .wrapper .second-card .card-info .bottom-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.6rem;
+  margin-top: 1.5em;
+}
+header .wrapper .second-card .card-info .bottom-info .person-name-diplay {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-right: 12em;
+}
+header .wrapper .second-card .card-info .bottom-info span {
+  margin: 0em;
+}
+
+main {
+  margin-top: 3.4em;
+  position: relative;
+}
+main #myForm {
+  display: grid;
+  grid-template-columns: 33% 34% 33%;
+  grid-template-rows: auto;
+  z-index: 22;
+}
+main #myForm label {
+  text-transform: uppercase;
+  font-size: 0.7em;
+  font-weight: bolder;
+  letter-spacing: 0.14em;
+}
+main #myForm label:nth-of-type(1n), main #myForm input:nth-of-type(1n), main #myForm #errorMsg {
+  grid-column: 1/span 3;
+}
+main #myForm label:nth-of-type(2n), main #myForm input:nth-of-type(2n), main #myForm #card-num-error {
+  grid-column: 1/span 3;
+}
+main #myForm input {
+  border: none;
+  border: 1px solid rgba(33, 33, 33, 0.15);
+  border-radius: 0.3em;
+  margin-top: 0.2em;
+  margin-bottom: 0.6em;
+  padding: 0.5em 0.8em;
+  width: 100%;
+}
+main #myForm input::-moz-placeholder {
+  opacity: 0.5;
+  font-size: 0.9em;
+  letter-spacing: 0.07em;
+}
+main #myForm input:-ms-input-placeholder {
+  opacity: 0.5;
+  font-size: 0.9em;
+  letter-spacing: 0.07em;
+}
+main #myForm input::placeholder {
+  opacity: 0.5;
+  font-size: 0.9em;
+  letter-spacing: 0.07em;
+}
+main #myForm input:focus {
+  border-color: var(--active-input-border);
+}
+main #myForm .three-inputs {
+  display: grid;
+  justify-content: center;
+  margin-top: 1.2em;
+  grid-template-columns: 70% 70% 54% 54%;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+main #myForm .three-inputs label:nth-of-type(1n) {
+  grid-column: 1;
+  grid-row: 1;
+}
+main #myForm .three-inputs input:nth-of-type(1n) {
+  grid-column: 1;
+  grid-row: 2;
+}
+main #myForm .three-inputs label:nth-of-type(2n) {
+  grid-column: 2;
+  grid-row: 1;
+}
+main #myForm .three-inputs input:nth-of-type(2n) {
+  grid-column: 2;
+  grid-row: 2;
+}
+main #myForm .three-inputs label:nth-of-type(3n) {
+  grid-column: 3/span 4;
+  grid-row: 1;
+  margin-left: 0.2em;
+}
+main #myForm .three-inputs input:nth-of-type(3n) {
+  grid-column: 3/span 4;
+  grid-row: 2;
+  width: 100%;
+}
+main #myForm .three-inputs #error-cvc {
+  grid-column: 3/span 4;
+  grid-row: 3;
+}
+main #myForm .three-inputs #submit {
+  grid-row: 4;
+  grid-column: 1/span 6;
+  margin-top: 1em;
+  display: block;
+  margin-inline: auto;
+  width: 100%;
+  padding: 0.75em 0;
+  background-color: var(--dark-violet);
+  border: none;
+  border-radius: 0.3em;
+  color: var(--white);
+  cursor: pointer;
+}
+main #thank-you {
+  text-align: center;
+  position: absolute;
+  z-index: 55;
+  top: 2em;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+main #thank-you .thank-you-header {
+  text-transform: uppercase;
+  margin-top: 1em;
+  font-weight: lighter;
+  letter-spacing: 3px;
+}
+main #thank-you img {
+  display: block;
+  margin-inline: auto;
+}
+main #thank-you p {
+  margin-top: 0.7em;
+  opacity: 0.6;
+}
+main #thank-you #continue {
+  grid-row: 4;
+  grid-column: 1/span 4;
+  margin-top: 1em;
+  display: block;
+  margin-inline: auto;
+  width: 85%;
+  padding: 0.75em 0;
+  background-color: var(--dark-violet);
+  border: none;
+  border-radius: 0.3em;
+  color: var(--white);
+  cursor: pointer;
+}
+
+#expiry-error, #card-num-error, #errorMsg, #error-cvc {
+  color: var(--input-wrong);
+  font-size: 0.5em;
+  margin-left: 0.4em;
+  border-color: var(--input-wrong);
+}
+
+.hidden {
+  display: none;
+}/*# sourceMappingURL=style.css.map */
